@@ -46,6 +46,13 @@ def captcha_handler(captcha: Any) -> Any:
     Через метод `get_url` можно получить ссылку на изображение.
     Через метод `try_again` можно попытаться отправить запрос с кодом капчи.
 
+    Info:
+        [http://vk.com/dev/captcha_error](
+            http://vk.com/dev/captcha_error)
+
+    Args:
+        captcha (): Объект исключения `Captcha`.
+
     Returns:
         Пробуем снова отправить запрос с каптчей.
     """
@@ -82,11 +89,7 @@ class VK:
             login = os.environ.get("VK_LOGIN")
             password = os.environ.get("VK_PASSWORD")
 
-        s = vk_api.VkApi(
-            login,
-            password,
-            # сaptcha_handler=captcha_handler
-        )
+        s = vk_api.VkApi(login, password, captcha_handler=captcha_handler)
 
         try:
             s.auth()
