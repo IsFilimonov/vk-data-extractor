@@ -1,0 +1,84 @@
+# TODO License
+
+docs_dir: "docs/"
+
+# Project information
+site_name: Vextractor
+site_url: https://github.com/IsFilimonov/vk-data-extractor
+site_author: Ilia Filimonov
+site_description: >-
+  Vextractor is a quick and handy extractor of user data from VKontakte (vk.com).
+
+# Repository
+repo_name: IsFilimonov/vk-data-extractor
+repo_url: https://github.com/IsFilimonov/vk-data-extractor
+
+# Copyright
+copyright: Copyright &copy; 2023 - 2023 Ilia Filimonov
+
+# Navigation
+nav:
+  - Home:
+    - Overview: 'index.md'
+  - Commands: 'cli.md'
+  - Objects:
+    - Core: 'vk-core.md'
+    - Enumerates: 'enumerates.md'
+    - Dataclasses: 'dataclasses.md'
+
+
+# Theme
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - toc.follow
+
+
+# Plugins
+plugins:
+    # Built-in search plugin
+    - search
+    # Grab docstrings
+    - mkdocstrings
+    # Exclude files
+    - exclude:
+          glob:
+            # - generated/*
+            - "*.tmp"
+            - "*.pdf"
+            - "*.gz"
+            - "*.yml"
+          regex:
+            - '.*\.(tmp|bin|tar)$'
+    # An MkDocs plugin to minify HTML, JS or CSS files prior to being written to disk.
+    - minify:
+        minify_html: true
+        minify_js: true
+        minify_css: true
+        htmlmin_opts:
+          remove_comments: true
+    # MkDocs plugin to add a last updated date to your site pages
+    - git-revision-date-localized
+    # Mardown images ro HTML figure
+    - img2fig
+
+# Markdown
+# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+# https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/
+markdown_extensions:
+    - pymdownx.betterem
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+    - toc:
+        title: On this page
+        toc_depth: 3
+        permalink: true
+        permalink_title: Anchor link to this section for reference
+    - pymdownx.snippets
