@@ -7,6 +7,6 @@ _CONFIG = {
     # Исп. собственное решение, тк click по-умолчанию использует:
     #   __package__ из переименнованного [tool.poetry.scripts]
     "prog_name": os.path.basename(os.getcwd()).capitalize(),
-    #
-    "download_dir": os.path.dirname(os.path.abspath(__package__)),
+    # Директория проекта
+    "root_dir": os.path.dirname(os.path.abspath(__package__)),
 }
