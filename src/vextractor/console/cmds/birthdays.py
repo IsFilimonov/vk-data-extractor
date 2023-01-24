@@ -33,8 +33,9 @@ def birthdays(login, password):
             writer = DictWriter(f, fieldnames=[field.name for field in fields(Friend)])
             writer.writeheader()
 
-            # Данный assert необходим, чтобы не срабатывала ошибка Mypy:
+            # Данный блок asserts необходим, чтобы не срабатывала ошибка Mypy:
             #   Item "None" of "Optional[Friends]" has no attribute "items"
+            assert result is not None
             assert result.items is not None
             for row in result.items:
                 writer.writerow(asdict(row))

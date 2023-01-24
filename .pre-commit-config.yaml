@@ -29,13 +29,13 @@ repos:
     -   id: black
 
 -   repo: https://github.com/asottile/blacken-docs
-    rev: v1.12.1
+    rev: 1.13.0
     hooks:
     -   id: blacken-docs
         additional_dependencies: [black==22.12.0]
 
 -   repo: https://github.com/pycqa/isort
-    rev: v5.11.3
+    rev: 5.11.4
     hooks:
     -   id: isort
 
