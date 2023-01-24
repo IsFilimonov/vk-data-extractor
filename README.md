@@ -19,7 +19,7 @@ The idea for this project arose from another project's needs. It is always more 
 
 ---
 
-<p align="center"><a href="https://github.com/IsFilimonov/vk-data-extractor#usage">commands</a></p>
+<p align="center"><a href="https://github.com/IsFilimonov/vk-data-extractor#usage">usage</a></p>
 
 ---
 
