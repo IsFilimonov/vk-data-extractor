@@ -44,7 +44,7 @@ class LastSeen:
     def __post_init__(self) -> None:
         """Постобработка: конвертация и валидация объектов."""
         # Validation
-        if not (0 < self.platform and self.platform < 8):
+        if not (1 <= self.platform <= 7):
             assert not self.platform, f"Unsupported platform id: {self.platform}"
         else:
             # Converting
