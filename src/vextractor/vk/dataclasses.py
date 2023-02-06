@@ -38,7 +38,7 @@ class LastSeen:
         time (int): Время последнего посещения в формате Unixtime.
     """
 
-    platform: Platform
+    platform: Platform | int
     time: int
 
     def __post_init__(self) -> None:
