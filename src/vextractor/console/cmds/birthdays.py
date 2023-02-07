@@ -25,11 +25,9 @@ def birthdays(login, password):
     result = api.get_friends_birthdays()
 
     if hasattr(result, "items"):
-
         file_name = define_result_file_path("birthdays")
 
         with click.open_file(file_name, "w", encoding="utf-8") as f:
-
             writer = DictWriter(f, fieldnames=[field.name for field in fields(Friend)])
             writer.writeheader()
 

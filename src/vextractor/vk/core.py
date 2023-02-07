@@ -84,7 +84,6 @@ class VK:
     def __init__(
         self, login: Optional[str] = None, password: Optional[str] = None
     ) -> None:
-
         if not login and not password:
             login = os.environ.get("VK_LOGIN")
             password = os.environ.get("VK_PASSWORD")
