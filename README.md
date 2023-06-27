@@ -28,17 +28,16 @@ The idea for this project arose from another project's needs. It is always more 
 - [Pallets Projects](https://palletsprojects.com/) for the [Click](https://github.com/pallets/click) CLI toolkit;
 - Kirill aka [@python273](https://github.com/python273) and [contributors](https://github.com/python273/vk_api/graphs/contributors) for the [vk_api](https://github.com/python273/vk_api).
 
-
 ## Secrets
 
 Fill `.env.example` and then rename it to `.env`.
 
 Also you can use options `--login` and `--password`, but it's not as convenient.
 
-
 ## Installing
 
 Install and update using [poetry](https://python-poetry.org/docs/cli/#install):
+
 ```bash
 poetry install --only main
 ```
@@ -46,23 +45,27 @@ poetry install --only main
 ### Groups
 
 Poetry [provides](https://python-poetry.org/docs/master/managing-dependencies/) a way to organize dependencies by groups. The Vextractor consists of:
+
 - Main group;
 - Dev dependencies;
 - Typing dependencies;
 - Docs dependencies;
 - Tests dependencies.
 
-
 ## Usage
 
 Vextractor uses the short cry `vextract` for convenience.
 
 There are several ways to call Vextractor:
+
 - Without activating virtual environment:
+
 ```bash
 poetry run vextract
 ```
+
 - With activating virtual environment:
+
 ```bash
 poetry shell
 vextract
@@ -79,7 +82,6 @@ Detail information for commands: `vextract birthdays -h/--help`
 ### Commands
 
 - `vextract birthdays` -- Extract friends birthdays.
-
 
 ## LICENSE
 

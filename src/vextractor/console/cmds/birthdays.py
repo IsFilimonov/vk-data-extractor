@@ -18,7 +18,7 @@ from vextractor.vk.dataclasses import Friend
 @click.help_option("-h", "--help")
 @click.option("--login", envvar="VK_LOGIN", help="Fill vk login from console.")
 @click.password_option(envvar="VK_PASSWORD", help="Fill vk password from console.")
-def birthdays(login, password):
+def birthdays(login: str, password: str) -> None:
     """Extract friends birthdays."""
 
     api = VK(login, password)

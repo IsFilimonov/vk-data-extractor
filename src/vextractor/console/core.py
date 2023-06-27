@@ -5,6 +5,7 @@ ToDo:
 """
 import click
 
+from vextractor.console.cmds.album import album
 from vextractor.console.cmds.birthdays import birthdays
 from vextractor.console.config import _CONFIG as CONFIG
 
@@ -18,3 +19,4 @@ def start():
 
 
 start.add_command(birthdays)
+start.add_command(album)

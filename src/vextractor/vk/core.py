@@ -6,6 +6,7 @@ ToDo:
 
 """
 import os
+import re
 from typing import Any, Final, Optional, TypedDict
 
 import vk_api
@@ -159,3 +160,48 @@ class VK:
 
         if isinstance(VK._f_b_api_fields, tuple):
             return VK._f_b_api_fields
+
+    @staticmethod
+    def extract_album_parametrs_from_url(url: str) -> tuple[str, str]:
+        """Получаем параметры из ссылки на альбом.
+
+        В url содержится как id владельца альбома (отрицательное значение означает, что владелец - группа),
+        так и id альбома.
+
+        Args:
+            url (str): Ссылка на альбом.
+
+        Returns:
+            id владельца, id альбома.
+        """
+        pattern_url = r"^https:.*album\-\d+_\d+$"
+
+        owner_match = re.search(r"album(-\d+)_", url)
+        album_match = re.search(r"album-\d+_(\d+)$", url)
+
+        if not re.match(pattern_url, url):
+            raise ValueError("Invalid url: {}".format(url))
+        if not owner_match:
+            raise ValueError("Owner not found in URL")
+        if not album_match:
+            raise ValueError("Album not found in URL")
+
+        owner, album = owner_match.group(1), album_match.group(1)
+
+        return owner, album
+
+    def get_list_of_album_images(self, owner: int, album: int) -> APIResponse:
+        """Получаем список изображений в альбоме.
+
+        Информация по изображениям хранится в различных размерах. Максимальное количество изображения за
+        один запрос - 1000, иначе потребуется использвовать параметр `offset`.
+        Более подробно читайте документацию: https://vk.com/dev/objects/photo_sizes .
+
+        Args:
+            owner (int): Идентификатор владельца. Может быть отрицательным для групп.
+            album (int): Идентификатор альбома.
+
+        Returns:
+            Список изображений в формате JSON.
+        """
+        return self.api.photos.get(owner_id=owner, album_id=album, count=1000)
