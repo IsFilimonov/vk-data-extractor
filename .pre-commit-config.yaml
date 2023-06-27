@@ -53,3 +53,6 @@ repos:
     rev: v1.3.0
     hooks:
     -   id: mypy
+        verbose: true
+        args: [--show-error-codes]
+        additional_dependencies: ['types-requests']

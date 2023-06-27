@@ -1,10 +1,11 @@
 """Модуль обрабатывает консольную команду `vextract album`."""
-import click
-import requests
 import os
 
-from vextractor.vk.core import VK
+import click
+import requests
+
 from vextractor.utils import define_result_folder_path
+from vextractor.vk.core import VK
 
 
 @click.command

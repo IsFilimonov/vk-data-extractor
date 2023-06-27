@@ -4,7 +4,7 @@ import os
 from vextractor.console.config import _CONFIG as CFG
 
 
-def check_results_dir(sub_folder: str = None) -> bool:
+def check_results_dir(sub_folder: str | None = None) -> bool:
     """Проверяет директорию `ROOT/results/`.
 
     Если директория отсутствует, то создает ее.
