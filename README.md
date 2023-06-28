@@ -82,6 +82,7 @@ Detail information for commands: `vextract birthdays -h/--help`
 ### Commands
 
 - `vextract birthdays` -- Extract friends birthdays.
+- `vextract album https://vk.com/album-1234567890_987654321` --- Download all images from album.
 
 ## LICENSE
 
