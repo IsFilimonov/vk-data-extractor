@@ -1,4 +1,5 @@
 """Модуль обрабатывает консольную команду `vextract album`."""
+
 import os
 
 import click

@@ -2,5 +2,4 @@
 """
 
 
-class VextractorError(Exception):
-    ...
+class VextractorError(Exception): ...
