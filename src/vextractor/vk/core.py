@@ -5,6 +5,7 @@ ToDo:
         затраченные ресурсы на работу превосходят гипотетическую потребность.
 
 """
+
 import os
 import re
 from typing import Any, Final, Optional, TypedDict

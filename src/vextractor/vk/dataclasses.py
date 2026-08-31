@@ -17,6 +17,7 @@ TODO:
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
 """
+
 from collections.abc import Iterable
 from dataclasses import dataclass, field
 from typing import Any, Optional

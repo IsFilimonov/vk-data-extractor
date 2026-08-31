@@ -4,6 +4,7 @@ ToDo:
     * Протестировать работу через --login и --password. Мб придется отказаться от ручного
     ввода. Проще создать файл `.env`.
 """
+
 from csv import DictWriter
 from dataclasses import asdict, fields
 
