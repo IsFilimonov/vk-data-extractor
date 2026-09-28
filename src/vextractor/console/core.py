@@ -3,6 +3,7 @@
 ToDo:
     * Общий параметр `-t`, `--time`, добавляющий к имени временную метку.
 """
+
 import click
 
 from vextractor.console.cmds.album import album
