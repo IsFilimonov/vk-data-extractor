@@ -1,6 +1,4 @@
-"""Модуль группирует обработчики ошибок.
-"""
+"""Модуль группирует обработчики ошибок."""
 
 
-class VextractorError(Exception):
-    ...
+class VextractorError(Exception): ...
