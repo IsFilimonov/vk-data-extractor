@@ -1,4 +1,5 @@
 """Модуль включает вспомогательные функции, процедуры и обработчики."""
+
 import os
 
 from vextractor.console.config import _CONFIG as CFG
